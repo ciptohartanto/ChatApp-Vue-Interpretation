@@ -1,28 +1,25 @@
-<template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+<template lang='pug'>
+#app
+  .wrapper
+    friends-update
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import FriendsUpdate from './Modules/FriendsUpdate/FriendsUpdate.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    FriendsUpdate
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="sass">
+@import './assets/sass/globals/_reset'
+@import './assets/sass/globals/_globals'
+
+.wrapper
+  padding: 20px 18px
+
 </style>
