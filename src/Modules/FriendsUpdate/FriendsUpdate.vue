@@ -63,7 +63,6 @@ export default {
   &-list
     display: flex
     width: 100%
-    overflow: hidden
 
   &-item
     margin-right: 10px

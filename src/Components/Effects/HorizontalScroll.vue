@@ -22,12 +22,18 @@ export default {
 .horizontalScroll
   &-parent
     overflow: hidden
+    margin-left: -18px
+    margin-right: -18px
   &-child
     display: flex
+    position: relative
     width: 100%
     overflow-x: scroll
     white-space: nowrap
+    padding-left: 18px
 
     > *
       white-space: normal //to cancel the white-space to all decendants
+      &:last-child
+        padding-right: 18px // to add the padding-right: 18px effect
 </style>
