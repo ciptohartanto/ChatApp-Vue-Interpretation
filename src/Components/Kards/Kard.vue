@@ -2,13 +2,16 @@
 .kard
 
   .kard-pin(v-if='kardPin !== 0')
-    pin(:pin-textcopy="_kardPin")
+    pin(
+      pin-textcopy="live"
+      :pin-style="kardPin"
+      )
 
   .kard-photo
     ImageBackdrop(:imgUrl='kardPhotoUrl')
 
   .kard-text
-    fondre(:fondre-style="kardTextStyle" fondreTag="h3" :textcopy="kardTextcopy")
+    fondre(:fondre-style="kardTextStyle" fondreTag="h3" :fondre-textcopy="kardTextcopy")
 
 </template>
 <script>
@@ -16,7 +19,6 @@ import ImageBackdrop from '../ImageBackdrop/ImageBackdrop.vue'
 import Fondre from '../Fondre/Fondre.vue'
 import Pin from '../Pin/Pin'
 import { FONDRE_STYLES } from '../Fondre/Const-fondre'
-import { PIN_TEXTCOPY } from '../Pin/Const-pin-textcopy'
 export default {
   name: 'Kard',
   components: {
@@ -38,14 +40,12 @@ export default {
       default: () => ''
     },
     kardPin: {
+      type: Number,
+      default: () => ''
+    },
+    kardPinStyle: {
       type: String,
       default: () => ''
-    }
-  },
-  computed: {
-    _kardPin: function () {
-      const arg = this.kardPin
-      return PIN_TEXTCOPY[arg]
     }
   }
 }

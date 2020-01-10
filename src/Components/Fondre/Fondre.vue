@@ -1,5 +1,5 @@
 <template lang="pug">
-  component(:is="fondreTag" :class="_fondreStyle") {{textcopy}}
+  component(:is="fondreTag" :class="_fondreStyle") {{fondreTextcopy}}
 </template>
 <script>
 import { FONDRE_STYLES } from './Const-fondre.js'
@@ -10,12 +10,12 @@ export default {
       type: String,
       default: () => '',
       validator: function (value) {
-        const allowedTags = ['h1', 'h2', 'h3', 'h4']
+        const allowedTags = ['h1', 'h2', 'h3', 'h4', 'a', 'span']
         return allowedTags.indexOf(value) !== -1
       }
     },
-    textcopy: {
-      type: String,
+    fondreTextcopy: {
+      type: [String, Number],
       default: () => ''
     },
     fondreStyle: {
@@ -39,6 +39,9 @@ export default {
     font-size: 14px
   &--medium
     font-size: 16px
-  &--largw
+  &--large
     font-size: 20px
+  &--xLarge
+    font-size: 28px
+    font-weight: bold
 </style>
