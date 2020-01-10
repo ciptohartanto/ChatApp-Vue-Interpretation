@@ -19,6 +19,7 @@
             :avatar-pin-style="item.status"
             :avatar-photo-model="friendsOnlinePhotoModel"
             :avatar-photo-url="item.photoUrl"
+            :avatar-pin-size="friendsOnlineAvatarPinSize"
             )
 </template>
 <script>
@@ -26,6 +27,7 @@ import SegmentText from '../../Components/SegmentText/SegmentText.vue'
 import HorizontalScroll from '../../Components/Effects/HorizontalScroll.vue'
 import Avatar from '../../Components/Avatars/Avatars.vue'
 import { AVATAR_STYLES } from '../../Components/Avatars/Const-avatar.js'
+import { PIN_SIZES } from '../../Components/Pin/Const-pin.js'
 export default {
   name: 'FriendsOnline',
   components: {
@@ -49,6 +51,10 @@ export default {
     friendsOnlineChildHeight: {
       type: Number,
       default: AVATAR_STYLES.S[1] + 6
+    },
+    friendsOnlineAvatarPinSize: {
+      type: String,
+      default: PIN_SIZES.S
     }
   },
   computed: {

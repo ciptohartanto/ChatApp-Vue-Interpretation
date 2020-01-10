@@ -10,7 +10,7 @@ export default {
       type: String,
       default: () => '',
       validator: function (value) {
-        const allowedTags = ['h1', 'h2', 'h3', 'h4', 'a', 'span']
+        const allowedTags = ['h1', 'h2', 'h3', 'h4', 'h5', 'a', 'span']
         return allowedTags.indexOf(value) !== -1
       }
     },

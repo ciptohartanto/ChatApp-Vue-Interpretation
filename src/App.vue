@@ -3,18 +3,21 @@
   .wrapper
     friends-update
     friends-online
+    Recent-convo
 
 </template>
 
 <script>
 import FriendsUpdate from './Modules/FriendsUpdate/FriendsUpdate.vue'
 import FriendsOnline from './Modules/FriendsOnline/FriendsOnline.vue'
+import RecentConvo from './Modules/RecentConvo/RecentConvo.vue'
 
 export default {
   name: 'app',
   components: {
     FriendsUpdate,
-    FriendsOnline
+    FriendsOnline,
+    RecentConvo
   }
 }
 </script>

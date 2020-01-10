@@ -1,7 +1,10 @@
 <template lang="pug">
 .avatar
   .avatar-pin(v-if="avatarPinStyle")
-    pin(:pinStyle='avatarPinStyle')
+    pin(
+      :pin-style='avatarPinStyle'
+      :pin-size="avatarPinSize"
+      )
   .avatar-photo(:class="_avatarPhotoModel")
     image-backdrop(:img-url="avatarPhotoUrl")
 </template>
@@ -18,7 +21,7 @@ export default {
   },
   props: {
     avatarPinStyle: {
-      type: String,
+      type: [String, Number],
       default: () => ''
     },
     avatarPhotoUrl: {
@@ -26,6 +29,10 @@ export default {
       default: () => ''
     },
     avatarPhotoModel: {
+      type: String,
+      default: () => ''
+    },
+    avatarPinSize: {
       type: String,
       default: () => ''
     }
@@ -53,7 +60,8 @@ export default {
       height: 60px
   &-pin
     position: absolute
+    display: inline-flex
     z-index: 2
     right: -3px
-    top: -5px
+    top: 0px
 </style>

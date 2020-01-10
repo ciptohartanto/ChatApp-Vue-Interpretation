@@ -1,5 +1,5 @@
 <template lang="pug">
-  .pin(:class="_pinClass")
+  .pin(:class="[_pinClass, _pinSizeClass]")
     fondre(
       v-if="pinTextcopy"
       fondre-tag="h4"
@@ -10,7 +10,7 @@
 <script>
 import Fondre from '../Fondre/Fondre'
 import { FONDRE_STYLES } from '../Fondre/Const-fondre'
-import { PIN_STYLE } from './Const-pin-textcopy'
+import { PIN_STYLE } from './Const-pin.js'
 export default {
   name: 'Pin',
   components: {
@@ -22,10 +22,14 @@ export default {
       default: FONDRE_STYLES.F_XS
     },
     pinTextcopy: {
-      type: String,
+      type: [String, Number],
       default: () => ''
     },
     pinStyle: {
+      type: [String, Number],
+      default: () => ''
+    },
+    pinSize: {
       type: String,
       default: () => ''
     }
@@ -41,6 +45,9 @@ export default {
       }
 
       return pinClass
+    },
+    _pinSizeClass: function () {
+      return `pin--${this.pinSize}`
     }
   }
 }
@@ -57,11 +64,15 @@ export default {
   &--online
     background-color: cadetblue
     border: 2px solid white
-    width: 10px
-    height: 10px
+
   &--offline
     background-color: gray
     border: 2px solid white
+
+  &--small
     width: 10px
     height: 10px
+  &--large
+    width: 15px
+    height: 15px
 </style>
